@@ -55,9 +55,7 @@ const Addemployee = () => {
         if (name === "age") {
             setAge(value);
         }
-        if (name === "attrition") {
-            setAttrition(value);
-        }
+
         if (name === "businessTravel") {
             setBusinessTravel(value);
         }
@@ -168,7 +166,6 @@ const Addemployee = () => {
             const response = await axios.post('http://localhost:8000/addemployee', {
                 emloyeename,
                 age,
-                attrition,
                 businessTravel,
                 dailyRate,
                 department,
@@ -238,7 +235,6 @@ const Addemployee = () => {
                 <h2>Employee</h2>
                 <TextField fullWidth value={emloyeename} onChange={handleInputChange} name="emloyeename" label="Employee Name" variant="outlined" />
                 <TextField fullWidth value={age} onChange={handleInputChange} name="age" label="Age" variant="outlined" />
-                <TextField fullWidth value={attrition} onChange={handleInputChange} name="attrition" label="Attrition" variant="outlined" />
                 <TextField fullWidth value={businessTravel} onChange={handleInputChange} name="businessTravel" label="Business Travel" variant="outlined" />
                 <TextField fullWidth value={dailyRate} onChange={handleInputChange} name="dailyRate" label="Daily Rate" variant="outlined" />
                 <TextField fullWidth value={department} onChange={handleInputChange} name="department" label="Department" variant="outlined" />
