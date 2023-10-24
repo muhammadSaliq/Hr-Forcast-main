@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import React, { useState } from 'react';
 import './addemployee.css';
 import axios from 'axios';
+import Navbars from '../../Ccomponents/Header/Navbar/Navbars';
+import Footer from '../../Ccomponents/Footer/Footer';
 
 const Addemployee = () => {
     const navigate = useNavigate();
@@ -231,6 +233,7 @@ const Addemployee = () => {
     
     return (
         <>
+        <Navbars/>
             <div className='rootcontainer'>
                 <h2>Employee</h2>
                 <TextField fullWidth value={emloyeename} onChange={handleInputChange} name="emloyeename" label="Employee Name" variant="outlined" />
@@ -270,6 +273,8 @@ const Addemployee = () => {
                 <TextField fullWidth value={yearsWithCurrManager} onChange={handleInputChange} name="yearsWithCurrManager" label="Years with Current Manager" variant="outlined" />
                 <Button fullWidth onClick={Addemployeedata} variant="contained">Add Employee</Button>
             </div>
+
+            <Footer/>
         </>
     );
 }
