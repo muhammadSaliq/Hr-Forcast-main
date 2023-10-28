@@ -38,7 +38,7 @@ let DeployURL = "https://glorious-hat-bat.cyclic.app"
 
 alert("You have successfully LoggedIn")
           console.log("login successful");
-          navigate('/', { replace: true })
+          navigate('/dashboard', { replace: true })
     
       } catch (error) {
         console.log(error)
