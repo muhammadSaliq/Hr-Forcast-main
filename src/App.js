@@ -6,6 +6,10 @@ import Login from "./Pages/LoginPage/Login";
 import About from "./Pages/Aboutus/About";
 import Addemployee from "./Pages/Addemployee/Addemployee";
 import HrApp from "./Pages/dashboard/HrApp";
+import Department from "./Pages/Departments/Departments";
+import AllEmployee from "./Pages/AllEmployee/Allemployee";
+import DisplayEmpbyDep from "./Pages/AllEmployee/Displaybydepartment/DisplayEmpbyDep";
+import EmployeeDetails from "./Pages/Employeedetails/EmployeeDetails";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
               <Route path={"/aboutus"} element={<About />} />
               <Route path={"/Addemployee"} element={<Addemployee />} />
               <Route path={"/dashboard"} element={<HrApp />} />
+              <Route path={"/department"} element={<Department />} />
+              <Route path={"/AllEmployee"} element={<AllEmployee />} />
+              <Route path={"/departmentEmployee/:department"} element={<DisplayEmpbyDep />} />
+              <Route path={"/Employeedetails/:id"} element={<EmployeeDetails />} />
 
 
             </Routes>

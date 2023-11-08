@@ -30,7 +30,7 @@ const Navbars = () => {
   return (
     <nav className="nav bg-white flex flex-wrap items-center justify-between px-4">
       <div className="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
-        <div style={{ width: "220px" }} class="logo ">
+        <div style={{ width: "220px" }} className="logo ">
           <Link to={"/"}>
           <img
               src="https://www.hrforecast.de/wp-content/uploads/2019/03/HRF_Logo_Wordpress.png"
@@ -87,7 +87,7 @@ const Navbars = () => {
         ) : null}
         {/* <Link to={"/CardPage"}>
           <li className="border-t md:border-none mt-2 mr-4 text-black font-bold hover:text-blue-500 transition duration-300 ease-in-out">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-cart-shopping"></i>
           </li>
         </Link> */}
         {/* */}
