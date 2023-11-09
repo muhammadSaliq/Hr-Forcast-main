@@ -88,6 +88,7 @@ const Addemployee = () => {
     const [overTimeerror, setOverTimeerror] = useState("");
     const [maritalStatuserror, setMaritalStatuserror] = useState("");
 
+    
       const getAlldepartments = async () => {
         try {
           const response = await axios.get(`http://localhost:8000/alldepartments`);
@@ -100,120 +101,69 @@ const Addemployee = () => {
       };
 
 
-    const handleInputChange = (ev) => {
-        const { value, name } = ev.target;
-
-
-        if (name === "emloyeename") {
-            setemloyeename(value);
-        }
-        if (name === "age") {
-            setAge(value);
-        }
-
-        if (name === "businessTravel") {
-            setBusinessTravel(value);
-        }
-        if (name === "dailyRate") {
-            setDailyRate(value);
-        }
-        if (name === "department") {
-            setDepartment(value);
-        }
-        if (name === "distanceFromHome") {
-            setDistanceFromHome(value);
-        }
-        if (name === "education") {
-            setEducation(value);
-        }
-        if (name === "educationField") {
-            setEducationField(value);
-        }
-        if (name === "employeeCount") {
-            setEmployeeCount(value);
-        }
-        if (name === "employeeNumber") {
-            setEmployeeNumber(value);
-        }
-        if (name === "environmentSatisfaction") {
-            setEnvironmentSatisfaction(value);
-        }
-        if (name === "gender") {
-            setGender(value);
-        }
-        if (name === "hourlyRate") {
-            setHourlyRate(value);
-        }
-        if (name === "jobInvolvement") {
-            setJobInvolvement(value);
-        }
-        if (name === "jobLevel") {
-            setJobLevel(value);
-        }
-        if (name === "jobRole") {
-            setJobRole(value);
-        }
-        if (name === "jobSatisfaction") {
-            setJobSatisfaction(value);
-        }
-        if (name === "maritalStatus") {
-            setMaritalStatus(value);
-        }
-        if (name === "monthlyIncome") {
-            setMonthlyIncome(value);
-        }
-        if (name === "monthlyRate") {
-            setMonthlyRate(value);
-        }
-        if (name === "numCompaniesWorked") {
-            setNumCompaniesWorked(value);
-        }
-        if (name === "over18") {
-            setOver18(value);
-        }
-        if (name === "overTime") {
-            setOverTime(value);
-        }
-        if (name === "percentSalaryHike") {
-            setPercentSalaryHike(value);
-        }
-        if (name === "performanceRating") {
-            setPerformanceRating(value);
-        }
-        if (name === "relationshipSatisfaction") {
-            setRelationshipSatisfaction(value);
-        }
-        if (name === "standardHours") {
-            setStandardHours(value);
-        }
-        if (name === "stockOptionLevel") {
-            setStockOptionLevel(value);
-        }
-        if (name === "totalWorkingYears") {
-            setTotalWorkingYears(value);
-        }
-        if (name === "trainingTimesLastYear") {
-            setTrainingTimesLastYear(value);
-        }
-        if (name === "workLifeBalance") {
-            setWorkLifeBalance(value);
-        }
-        if (name === "yearsAtCompany") {
-            setYearsAtCompany(value);
-        }
-        if (name === "yearsInCurrentRole") {
-            setYearsInCurrentRole(value);
-        }
-        if (name === "yearsSinceLastPromotion") {
-            setYearsSinceLastPromotion(value);
-        }
-        if (name === "yearsWithCurrManager") {
-            setYearsWithCurrManager(value);
-        }
-    };
-
     const Addemployeedata = async () => {
 
+if (emloyeename && age && businessTravel && dailyRate && department && distanceFromHome && education && educationField && employeeNumber &&
+    environmentSatisfaction && gender && hourlyRate && jobInvolvement && jobLevel && jobRole && jobSatisfaction && maritalStatus &&
+    monthlyIncome && monthlyRate && monthlyRate && numCompaniesWorked && over18 && overTime && percentSalaryHike && performanceRating &&
+    relationshipSatisfaction && standardHours && stockOptionLevel && totalWorkingYears && trainingTimesLastYear && workLifeBalance &&
+    yearsAtCompany && yearsSinceLastPromotion && yearsWithCurrManager
+    ) {
+
+          try {
+            const response = await axios.post('http://localhost:8000/addemployee', {
+                emloyeename,
+                age,
+                businessTravel,
+                dailyRate,
+                department,
+                distanceFromHome,
+                education,
+                educationField,
+                employeeNumber,
+
+                environmentSatisfaction,
+                gender,
+                hourlyRate,
+                jobInvolvement,
+                jobLevel,
+                jobRole,
+                jobSatisfaction,
+                maritalStatus,
+                monthlyIncome,
+                monthlyRate,
+                numCompaniesWorked,
+                over18,
+                overTime,
+                percentSalaryHike,
+                performanceRating,
+                relationshipSatisfaction,
+                standardHours,
+                stockOptionLevel,
+                totalWorkingYears,
+                trainingTimesLastYear,
+                workLifeBalance,
+                yearsAtCompany,
+                yearsSinceLastPromotion,
+                yearsWithCurrManager
+            });
+    
+            // Handle the response according to your needs
+            if (response.status === 201) {
+              console.log('Signup successful');
+              alert("Employee successfully registered");
+            } else {
+                alert("Employee Failed to register")
+              console.log('Employee failed');
+            }
+          } catch (error) {
+            console.error(error);
+          }
+    
+        }
+        else {
+            alert("All Fields need to be filled")
+            
         if (!emloyeename) {
             setnameError("Please enter name");
             //setPasswordError(!password);
@@ -364,69 +314,9 @@ if (!yearsWithCurrManager) {
     setYearsWithCurrManagererror("please enter years with manager");
 return;
 }   
-          try {
-            const response = await axios.post('http://localhost:8000/addemployee', {
-                emloyeename,
-                age,
-                businessTravel,
-                dailyRate,
-                department,
-                distanceFromHome,
-                education,
-                educationField,
-                employeeCount,
-                employeeNumber,
-
-                environmentSatisfaction,
-                gender,
-                hourlyRate,
-                jobInvolvement,
-                jobLevel,
-                jobRole,
-                jobSatisfaction,
-                maritalStatus,
-                monthlyIncome,
-                monthlyRate,
-                numCompaniesWorked,
-                over18,
-                overTime,
-                percentSalaryHike,
-                performanceRating,
-                relationshipSatisfaction,
-                standardHours,
-                stockOptionLevel,
-                totalWorkingYears,
-                trainingTimesLastYear,
-                workLifeBalance,
-                yearsAtCompany,
-                yearsSinceLastPromotion,
-                yearsWithCurrManager
-            });
-    
-            // Handle the response according to your needs
-            if (response.status === 201) {
-              console.log('Signup successful');
-              alert("Employee successfully registered");
-            } else {
-              console.log('Employee failed');
-            }
-          } catch (error) {
-            console.error(error);
-          }
-    
-    
+        }
     
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
       };
     
      useEffect(() => {
@@ -475,7 +365,6 @@ return;
                 {educationerror && <p className="error-message">{educationerror}</p>} 
                 <TextField fullWidth value={educationField} onChange={(event) => { setEducationField(event.target.value); seteducationFielderror("") }} name="educationField" label="Education Field" variant="outlined" />
                 {educationFielderror && <p className="error-message">{educationFielderror}</p>}
-                <TextField fullWidth value={employeeCount} type = "number"onChange={(event) => { setEmployeeCount(event.target.value)}} name="employeeCount" label="Employee Count" variant="outlined" />
                 <TextField fullWidth value={employeeNumber}  onChange={(event) => {setEmployeeNumber(event.target.value); setEmployeeNumbererror("") }} type = "number" name="employeeNumber" label="Employee Number" variant="outlined" />
                 {employeeNumbererror && <p className="error-message">{employeeNumbererror}</p>}
                 <TextField fullWidth value={environmentSatisfaction} onChange={(event) => { setEnvironmentSatisfaction(event.target.value); setenvironmentSatisfactionerror("") }} type = "number" name="environmentSatisfaction" label="Environment Satisfaction" variant="outlined" />
